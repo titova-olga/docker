@@ -106,16 +106,16 @@ Hands-on practice quest #00: prerequisites sound-check (15+5)
 ``` 
 
 - [ ] When участники *именуют сценарии*, выполняют команды и анализируют их вывод и поведение
-- Сценарий "Как ...?"
+- Сценарий "Как посмотреть информацию о докере, контейнерах и образах?"
 ```shell
-docker version # TODO: собственные пометки участников для будущего использования в проектах
-docker system info
-docker system df
+docker version # docker version info
+docker system info # docker system info
+docker system df # docker memory usage info in dataframe (df -v - for more info)
 
 docker events
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как залогиниться на докер хаб?"
 (в новом ssh shell, чтобы параллельно видеть вывод `docker events`)
 ```shell
 docker logout
@@ -123,24 +123,24 @@ open https://hub.docker.com/settings/security # to make Access Token
 docker login -u {{ registry-account }} -p {{ access-token }} # login default hub.docker.com registry
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как выкачать образ?"
 ```shell
-docker image pull alpine
+docker image pull alpine # pull an image
 docker system df
 ````
 
-- Сценарий "Как ...?"
+- Сценарий "Как создать и запустить контейнер?"
 ```shell
-docker container ls [--all]
-docker container run --name demo -it alpine
+docker container ls [--all] # list running containers or all
+docker container run --name demo -it alpine # run command in a new container (events: container create, attach, start, resize, die)
 /# cat /etc/os-release
 /# exit 
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как удалить контейнер?"
 ```shell
 docker container ls [--all]
-docker container rm [--force] demo
+docker container rm [--force] demo # remove container (events: container destroy)
 ```
 
 - [ ] Then участники делятся проблемами и отвечают на вопросы
